@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <!--  <h1>Flip Card Demo</h1> -->
+
+    <div class="card-container" id="cardContainer">
+        <div class="card" id="card">
+            <!-- font side of card -->
+            <div class="card-face card-front">
+                <div class="icon">🐦‍🔥</div>
+                <h2>Hello, Explorer!</h2>
+                <p>Welcome, to the world of CSS transitios. Click this card to discover what is on the other side.</p>
+                <div class="hint">Click to flip</div>
+            </div>
+
+            <div class="card-face card-back">
+                <div class="icon">👌</div>
+                <h2>Your found it!</h2>
+                <p>Great job! This is the back of the card. CSS 3D transforms make this smooth flip effect possible.</p>
+                <div class="hint">Click to flip</div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script>
+        let flipped = false;
+        document.getElementById('cardContainer').onclick = function(){
+            let card = document.getElementById('card')
+            if(flipped){
+                card.style.transform = 'rotateY(0deg)';
+            }else{
+                card.style.transform = 'rotateY(180deg)';
+            }
+            flipped = !flipped;
+        };
+    </script>
+</body>
+</html>
